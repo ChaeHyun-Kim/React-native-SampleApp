@@ -1,112 +1,57 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
+//App.js
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+export default class App extends React.Component {
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.settingView}>
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+          <Text style={styles.lodaingText}>
+           안녕 채현아~~~ app 만들기 성공!
+          </Text>
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+        <View style={styles.ddayView}>
+          <Image
+              style={styles.imagesize}
+              source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}}
+            />
+
+        </View>
+        <View style={styles.chatView}>
+
+        </View>
+      </View>
+
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+    container: {
+      flex: 1,
+    },
+    settingView: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    ddayView: {
+      flex: 7,
+      backgroundColor: 'green',
+    },
+    chatView: {
+      flex: 7,
+      backgroundColor: 'blue',
+    },
+    lodaingText: {
+      fontSize : 25,
+    },
+    imagesize : {
+      width : 40,
+      height : 40,
+    }
 });
-
-export default App;
