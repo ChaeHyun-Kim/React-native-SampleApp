@@ -1,19 +1,18 @@
-//App.js
+
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, RadioButton } from 'react-native';
 
 
 
-export default class App extends React.Component {
-
-  render() {
+function signup1({navigation}) {
+    
     return (
       <View style={styles.container}>
         <View style={styles.settingView}>
           <TouchableOpacity>
             <Image 
               style={{width: 10, height: 20}}
-              source={require('./icon/arrow.png')}/>
+              source={require('../icon/arrow.png')}/>
             </TouchableOpacity>
           </View>
 
@@ -29,7 +28,7 @@ export default class App extends React.Component {
           <View style={styles.group}>
             <Image 
                 style={{width: 25, height: 25}}
-                source={require('./icon/checkoff.png')}/>
+                source={require('../icon/checkoff.png')}/>
             <Text style={styles.MText}> 약관 전체 동의 </Text>
           </View>
         </View>
@@ -38,7 +37,7 @@ export default class App extends React.Component {
 
         <Image 
               style={{width: '100%', height: 2}}
-              source={require('./icon/line.png')}/>
+              source={require('../icon/line.png')}/>
 
         <View style={styles.marginView2}></View>
 
@@ -49,36 +48,38 @@ export default class App extends React.Component {
           <View style={styles.group}>
             <Image 
                 style={{width: 25, height: 25}}
-                source={require('./icon/checkoff.png')}/>
+                source={require('../icon/checkoff.png')}/>
             <Text style={styles.SText}> 이용약관 동의 (필수) </Text>
           </View>
           <Image 
               style={styles.icon} 
-              source={require('./icon/arrow2.png')}/>
+              source={require('../icon/arrow2.png')}/>
         </View>
 
         <View style={styles.MainView}>
           <View style={styles.group}> 
             <Image 
                 style={{width: 25, height: 25}}
-                source={require('./icon/checkoff.png')}/>
+                source={require('../icon/checkoff.png')}/>
             <Text style={styles.SText}> 개인정보 수집 및 이용 동의 (필수) </Text>
           </View> 
           <Image 
               style={styles.icon} 
-              source={require('./icon/arrow2.png')}/>
+              source={require('../icon/arrow2.png')}/>
         </View>
         <View style={styles.chatControl}>
 
           <TouchableOpacity style={styles.sendButton}>
             <Text style={styles.white}> 다 음 </Text>
+            onPress={() => navigation.navigate("signup2")}
           </TouchableOpacity>
         </View>
       </View>
     
     );
   }
-}
+
+export default signup1;
 
 const styles = StyleSheet.create({
     container: {
