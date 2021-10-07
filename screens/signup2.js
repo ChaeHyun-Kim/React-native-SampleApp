@@ -5,24 +5,24 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'rea
 
 
 function signup2({navigation}) {
-    return (
-      <View style={styles.container}>
-        <View style={styles.settingView}>
-          <TouchableOpacity>
-            <Image 
-              style={{width: 10, height: 20}}
-              source={require('../icon/arrow.png')}/>
-            </TouchableOpacity>
-        </View>
-        <View>
-            <Text style={styles.titleText}>
-              이용약관 동의
-            </Text>
-        </View>
+  return (
+    <View style={styles.container}>
+      <View style={styles.settingView}>
+        <TouchableOpacity>
+          <Image 
+            style={{width: 10, height: 20}}
+            source={require('../icon/arrow.png')}/>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <Text style={styles.titleText}>
+          이용약관 동의
+        </Text>
+      </View>
 
-        <View style={styles.MainView}>
-          <ScrollView>
-            <Text style={styles.MText}>{"\n"}제1장 총칙{"\n"}
+      <View style={styles.MainView}>
+        <ScrollView>
+          <Text style={styles.MText}>{"\n"}제1장 총칙{"\n"}
 제1조 (목적) 이 약관은 주식회사 에이플러스에셋어드바이저(이하 “회사”라 합니다)가 운영하는 보장분석서비스(TRD) “홈페이지”와 보플 “애플리케이션”(이하 “홈페이지”와 “애플리케이션”을 “APP”이라고 합니다)의 서비스 이용 및 제공에 관한 제반 사항의 규정을 목적으로 합니다.{"\n"}
 제2조 (용어의 정의) ① 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.{"\n"}
 “서비스”라 함은 구현되는 PC, 모바일 기기를 통하여 “이용자”가 이용할 수 있는 보장분석서비스 등 회사가 제공하는 제반 서비스를 의미합니다.{"\n"}
@@ -185,28 +185,33 @@ function signup2({navigation}) {
 ① 회사는 회원의 편의를 고려하여 회원의 의견이나 불만을 제시하는 방법을 서비스 내 또는 그 연결화면에 안내합니다.{"\n"}
 ② 회사는 회원으로부터 제기되는 의견이나 불만이 정당하다고 객관적으로 인정될 경우에는 합리적인 기간 내에 이를 신속하게 처리합니다. 다만, 처리에 장기간이 소요되는 경우에는 회원에게 장기간이 소요되는 사유와 처리일정을 서비스 내 공지하거나 제8조에 따라 통지합니다.{"\n"}
 제15조 (재판권 및 준거법) 이 약관은 대한민국 법률에 따라 규율되고 해석됩니다. 회사와 회원 간에 발생한 분쟁으로 소송이 제기되는 경우에는 법령에 정한 절차에 따른 법원을 관할 법원으로 합니다.</Text>
-          </ScrollView>
+        </ScrollView>
           
-        </View>
+      </View>
 
         
-        <View style={styles.chatControl}>
+      <View style={styles.chatControl}>
 
-          <TouchableOpacity style={styles.sendButton}>
-            <Text style={styles.white}> 다 음 </Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.sendButton}
+          activeOpacity={0.8}
+            onPress={() => {
+              navigation.navigate("signup3");
+            }}
+          >
+          <Text style={styles.white}> 다 음 </Text>
+        </TouchableOpacity>
       </View>
+    </View>
     
-    );
-  }
-  export default signup2;
+  );
+}
+export default signup2;
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 30,
-    },
+  container: {
+    flex: 1,
+    padding: 30,
+  },
 
     settingView: {
       flex: 2,
